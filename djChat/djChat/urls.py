@@ -1,6 +1,11 @@
 from django.contrib import admin
 from django.urls import path
+from server import views
+from rest_framework.routers import DefaultRouter
 from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, SpectacularSwaggerView
+
+router = DefaultRouter()
+router.register('api/server/select',views.ServerListViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -9,4 +14,4 @@ urlpatterns = [
     # # Optional UI:
     path('api/docs/schema/swagger-ui/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
     path('api/docs/schema/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
-]
+]+router.urls
