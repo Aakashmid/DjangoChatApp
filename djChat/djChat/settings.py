@@ -138,6 +138,9 @@ AUTH_USER_MODEL ="account.Account"
 REST_FRAMEWORK = {
     # YOUR SETTINGS
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+    "DEFAULT_AUTHENTICATION__CLASSES": [
+        "rest_framework.authentication.SessionAuthentication",  
+    ]
 }
 
 SPECTACULAR_SETTINGS = {
