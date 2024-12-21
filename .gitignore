@@ -3,5 +3,5 @@ venv/
 .env
 
 __pycache__/
-.vscode
+.vscode/
 db.sqlite3
